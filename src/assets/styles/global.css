@@ -63,12 +63,14 @@ textarea {
 
 /* ==== Responsivity ==== */
 @media (min-width: 700px) {
-    :root {
-        font-size: 62.5%; 
-        /* Here the mobile website
-        will set the font as 62,5%
-        of 16px = 10px. So this means 
-        that 1rem now is gonna be the 
-        same as 10px */
+    :root { 
+        /* 
+            Here the mobile website
+            will set the font as 62,5%
+            of 16px = 10px. So this means 
+            that 1rem now is gonna be equal
+            to 10px 
+        */
+        font-size: 62.5%;
     }
 }
