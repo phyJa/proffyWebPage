@@ -1,5 +1,8 @@
 import React from 'react';
 
+// CSS
+import './styles.css';
+
 // Importing the SVG images. Note that they
 // become JS variables
 import logoImg from '../../assets/images/logo.svg';
