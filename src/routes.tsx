@@ -13,7 +13,7 @@ export default function Routes () {
     // corresponding component to be loaded
     return (
         <BrowserRouter>
-            <Route path="/" component={Landing} />
+            <Route path="/" component={Landing} exact />
             <Route path="/study" component={TeacherList} />
             <Route path="/give-classes" component={TeacherForm} />
         </BrowserRouter>

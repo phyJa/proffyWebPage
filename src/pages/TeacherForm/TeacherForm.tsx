@@ -2,8 +2,6 @@ import React from 'react'
 
 export default function TeacherForm() {
     return (
-        <div>
-            
-        </div>
+        <h1>Teacher form</h1>
     )
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 //Note that this style is inside the JS
 import './assets/styles/global.css';
-import Landing from './pages/Landing';
+import Routes from './routes';
 
 function App() {
   return (
-    <Landing />
+    <Routes />
   );
 }
 
