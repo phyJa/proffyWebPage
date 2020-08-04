@@ -37,7 +37,7 @@ export default function TeacherList () {
                         
                         <div>
                             <strong>Elias</strong>
-                            
+
                             <span>Física</span>
                         </div>
                     </header>
@@ -50,8 +50,8 @@ export default function TeacherList () {
 
                     <footer>
                         <p>
-                            Pricing:
-                            <strong>R$ 40,00 per hour</strong>
+                            Pricing: 
+                            <strong> R$ 40,00 per hour </strong>
                         </p>
 
                         <button type="button">
