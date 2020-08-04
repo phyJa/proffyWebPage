@@ -38,7 +38,7 @@ export default function TeacherList () {
                         <div>
                             <strong>Elias</strong>
 
-                            <span>Física</span>
+                            <span>Physics</span>
                         </div>
                     </header>
 
