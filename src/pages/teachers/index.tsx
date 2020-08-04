@@ -8,7 +8,7 @@ import './styles.css';
 export default function TeacherList () {
     return (
         <div id="page-teacher-list" className="container">
-            <PageHeader />
+            <PageHeader title="These are the available Proffys" />
         </div>
     )
 }
