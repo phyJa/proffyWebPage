@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 
-export default function PageHeader () {
+// This is for add the type of the variables passed as properties
+interface PageHeaderProps {
+    //If the property is optional, declare " title?: string "
+    title: string;
+}
+
+// Defining your component as a const starts to use types.
+// Then, to use the interface, use:
+// const "NAME" : React.FunctionComponent(or FC)<"Your Interface">
+const PageHeader: React.FC<PageHeaderProps> = (props) => {
     return (
         <header className="page-header">
                 <div className="top-bar-container">
@@ -16,9 +25,11 @@ export default function PageHeader () {
 
                 <div className="header-content">
                     <strong>
-                        These are the available Proffys.
+                        {props.title}
                     </strong>
                 </div>
             </header>
     );
 }
+
+export default PageHeader;
