@@ -10,6 +10,12 @@
     background-color: var(--color-primary);
 }
 
+#page-landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo-container {
     text-align: center;
     margin-bottom: 3.2rem;
@@ -17,7 +23,7 @@
 }
 
 .logo-container img {
-    height: 8rem;
+    height: 6rem;
 }
 
 .logo-container h2 {
@@ -28,7 +34,7 @@
 }
 
 .hero-image {
-    width: 100%;
+    width: 60%;
 }
 
 .buttons-container {
@@ -39,7 +45,7 @@
 
 .buttons-container a {
     width: 18rem; /* 30rem --> 18rem */
-    height: 8rem; /* 18.4rem --> 6rem */
+    height: 6rem; /* 18.4rem --> 6rem */
     border-radius: 0.8rem;
     font: 700 2rem Archivo;
     text-decoration: none;
@@ -133,6 +139,7 @@
     .hero-image {
         grid-area: hero;
         justify-self: end;
+        width: 100%;
     }
 
     .buttons-container {
