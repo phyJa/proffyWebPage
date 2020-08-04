@@ -5,7 +5,7 @@ import React from 'react';
 // Route: each route
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import TeacherList from './pages/teachers';
+import TeacherList from './pages/TeacherList';
 import TeacherForm from './pages/TeacherForm/TeacherForm';
 
 export default function Routes () {

@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 // Images
 import logoImg from '../../assets/images/logo.svg';
 import backIcon from '../../assets/images/icons/back.svg';
+
+//CSS
+import './styles.css';
+
 
 // This is for add the type of the variables passed as properties
 interface PageHeaderProps {
@@ -27,6 +32,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                     <strong>
                         {props.title}
                     </strong>
+
+                    {props.children}
                 </div>
             </header>
     );
