@@ -13,6 +13,7 @@ import './styles.css';
 interface PageHeaderProps {
     //If the property is optional, declare " title?: string "
     title: string;
+    description?: string;
 }
 
 // Defining your component as a const starts to use types.
@@ -33,6 +34,11 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                     {props.title}
                 </strong>
 
+                {
+                    //If the first part is true, it executes/displays the second one
+                    props.description && <p>{props.description}</p>
+                }
+                
                 {props.children}
             </div>
         </header>
