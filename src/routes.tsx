@@ -6,7 +6,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import TeacherList from './pages/TeacherList';
-import TeacherForm from './pages/TeacherForm/TeacherForm';
+import TeacherForm from './pages/TeacherForm';
 
 export default function Routes () {
     // Two mandatory properties for <Route />: "path" (shown in the browser) and the
