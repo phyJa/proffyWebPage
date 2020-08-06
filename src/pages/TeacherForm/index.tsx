@@ -20,6 +20,13 @@ export default function TeacherForm() {
 
                     <Input name="whatsapp" label="Whatsapp"/>
                 </fieldset>
+
+                <fieldset>
+                    <legend>About your lessons</legend>
+                    <Input name="subject" label="Subject"/>
+
+                    <Input name="cost" label="Cost per hour"/>
+                </fieldset>
             </main>
         </div>
     )
