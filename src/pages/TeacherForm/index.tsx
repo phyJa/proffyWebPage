@@ -8,6 +8,7 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 //CSS
 import './styles.css';
 import Textarea from '../../components/Textarea';
+import Select from '../../components/Select';
 
 export default function TeacherForm() {
     return (
@@ -20,6 +21,7 @@ export default function TeacherForm() {
             <main>
                 <fieldset>
                     <legend>Your data</legend>
+                    
                     <Input name="name" label="Full name"/>
 
                     <Input name="avatar" label="Avatar"/>
@@ -31,7 +33,8 @@ export default function TeacherForm() {
 
                 <fieldset>
                     <legend>About your lessons</legend>
-                    <Input name="subject" label="Subject"/>
+
+                    <Select name="subject" label="Subject"/>
 
                     <Input name="cost" label="Cost per hour"/>
                 </fieldset>
