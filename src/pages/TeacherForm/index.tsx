@@ -1,7 +1,12 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader'
-import './styles.css';
 import Input from '../../components/Input';
+
+// Icon
+import warningIcon from '../../assets/images/icons/warning.svg'
+
+//CSS
+import './styles.css';
 
 export default function TeacherForm() {
     return (
@@ -27,6 +32,18 @@ export default function TeacherForm() {
 
                     <Input name="cost" label="Cost per hour"/>
                 </fieldset>
+
+                <footer>
+                    <p>
+                        <img src={warningIcon} alt="Important warning"/>
+                        Important!
+                        <br />
+                        Fill all the fields
+                    </p>
+                    <button type="button">
+                        Save submission
+                    </button>
+                </footer>
             </main>
         </div>
     )
