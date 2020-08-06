@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Components
 import PageHeader from '../../components/PageHeader'
@@ -14,6 +14,39 @@ import './styles.css';
 
 
 export default function TeacherForm() {
+    
+    // To use states in a function component,
+    // import {useState} and store the initial state
+    // in this variable
+    const [scheduleItems, setScheduleItems] = useState(
+        [
+            {
+                week_day: 0,
+                from: '',
+                to: ''
+            }
+        ]
+    );
+
+    // The useState() function returns two things in an array structure:
+    // 1. The first thing, and at the first array position, is the data itself
+    // 2. A function which can replace the data returned at the first position
+
+    function addNewScheduleItem() {
+        // So, in order to not lose the initial data, we copy the original array
+        // by using the spread operator (...) and add new data to this array
+        setScheduleItems(
+            [
+                ...scheduleItems,
+                {
+                    week_day: 0,
+                    from: '',
+                    to: ''
+                }
+            ]
+        );
+    }
+
     return (
         <div id="page-teacher-form" className="container">
             <PageHeader 
@@ -62,30 +95,38 @@ export default function TeacherForm() {
                     <legend>
                         Available schedule
 
-                        <button type="button">+ New time</button>
+                        <button type="button" onClick={addNewScheduleItem}>+ New time</button>
                     </legend>
                     
-                    <div className="schedule-item">
-                        <Select 
-                            name="week_day" 
-                            label="Week Day"
-                            options={
-                                [
-                                    {value: '0', label: 'Sunday'},
-                                    {value: '1', label: 'Monday'},
-                                    {value: '2', label: 'Tuesday'},
-                                    {value: '3', label: 'Wednesday'},
-                                    {value: '4', label: 'Thursday'},
-                                    {value: '5', label: 'Friday'},
-                                    {value: '6', label: 'Saturday'}
-                                ]
+                    {
+                        scheduleItems.map(
+                            (scheduleItem) => {
+                                return(
+                                    <div className="schedule-item" key={scheduleItem.week_day}>
+                                        <Select 
+                                            name="week_day" 
+                                            label="Week Day"
+                                            options={
+                                                [
+                                                    {value: '0', label: 'Sunday'},
+                                                    {value: '1', label: 'Monday'},
+                                                    {value: '2', label: 'Tuesday'},
+                                                    {value: '3', label: 'Wednesday'},
+                                                    {value: '4', label: 'Thursday'},
+                                                    {value: '5', label: 'Friday'},
+                                                    {value: '6', label: 'Saturday'}
+                                                ]
+                                            }
+                                        />
+
+                                        <Input name="from" label="From" type="time" />
+
+                                        <Input name="to" label="To" type="time" />
+                                    </div>
+                                );
                             }
-                        />
-
-                        <Input name="from" label="From" type="time" />
-
-                        <Input name="to" label="To" type="time" />
-                    </div>
+                        )
+                    }
                 </fieldset>
 
                 <footer>
