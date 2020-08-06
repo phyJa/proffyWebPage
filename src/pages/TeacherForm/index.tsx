@@ -21,7 +21,7 @@ export default function TeacherForm() {
             <main>
                 <fieldset>
                     <legend>Your data</legend>
-                    
+
                     <Input name="name" label="Full name"/>
 
                     <Input name="avatar" label="Avatar"/>
@@ -34,7 +34,23 @@ export default function TeacherForm() {
                 <fieldset>
                     <legend>About your lessons</legend>
 
-                    <Select name="subject" label="Subject"/>
+                    <Select 
+                        name="subject" 
+                        label="Subject"
+                        options={
+                            [
+                                {value: 'Art', label: 'Art'},
+                                {value: 'Biology', label: 'Biology'},
+                                {value: 'Physic Education', label: 'Physic Education'},
+                                {value: 'English', label: 'English'},
+                                {value: 'Portuguese', label: 'Portuguese'},
+                                {value: 'Physics', label: 'Physics'},
+                                {value: 'Chemistry', label: 'Chemistry'},
+                                {value: 'History', label: 'History'},
+                                {value: 'Geography', label: 'Geography'}
+                            ]
+                        }
+                    />
 
                     <Input name="cost" label="Cost per hour"/>
                 </fieldset>
