@@ -16,7 +16,7 @@ interface PageHeaderProps {
     description?: string;
 }
 
-// Defining your component as a const starts to use types.
+// Defining your component as a const starts to use types to the props.
 // Then, to use the interface, use:
 // const "NAME" : React.FunctionComponent(or FC)<"Your Interface">
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
