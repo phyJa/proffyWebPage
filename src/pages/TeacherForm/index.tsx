@@ -7,6 +7,7 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 
 //CSS
 import './styles.css';
+import Textarea from '../../components/Textarea';
 
 export default function TeacherForm() {
     return (
@@ -24,6 +25,8 @@ export default function TeacherForm() {
                     <Input name="avatar" label="Avatar"/>
 
                     <Input name="whatsapp" label="Whatsapp"/>
+
+                    <Textarea name="bio" label="Tell us a little bit about you..."/>
                 </fieldset>
 
                 <fieldset>
