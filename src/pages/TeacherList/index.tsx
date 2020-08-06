@@ -1,9 +1,11 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
+import TeacherItem from '../../components/TeacherItem';
+import Input from '../../components/Input';
 
 // CSS
 import './styles.css';  
-import TeacherItem from '../../components/TeacherItem';
+
 
 
 export default function TeacherList () {
@@ -11,20 +13,11 @@ export default function TeacherList () {
         <div id="page-teacher-list" className="container">
             <PageHeader title="These are the available Proffys">
                 <form id="search-teachers">
-                    <div className="input-block">
-                        <label htmlFor="subject">Subject</label>
-                        <input type="text" id="subject"/>
-                    </div>
+                    <Input name="subject" label="Subject"/>
 
-                    <div className="input-block">
-                        <label htmlFor="week_day">Week Day</label>
-                        <input type="text" id="week_day"/>
-                    </div>
+                    <Input name="week_day" label="Week Day"/>
 
-                    <div className="input-block">
-                        <label htmlFor="time">Time</label>
-                        <input type="text" id="time"/>
-                    </div>
+                    <Input name="time" label="Time"/>
                 </form>
             </PageHeader>
 
