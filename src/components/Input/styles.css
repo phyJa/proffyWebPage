@@ -24,4 +24,5 @@
 
 .input-block input:focus {
     background-color: var(--color-input-background-focus);
+    color: var(--color-input-focus);
 }

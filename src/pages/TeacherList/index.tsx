@@ -16,8 +16,8 @@ export default function TeacherList () {
                     <Input name="subject" label="Subject"/>
 
                     <Input name="week_day" label="Week Day"/>
-
-                    <Input name="time" label="Time"/>
+                    
+                    <Input name="time" label="Time" type="time"/>
                 </form>
             </PageHeader>
 
