@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
 
 // Components
 import PageHeader from '../../components/PageHeader'
@@ -58,8 +58,19 @@ export default function TeacherForm() {
         );
     }
 
-    function handleCreateClass () {
-
+    // Let's use Form Event to start preventing the page to reload
+    function handleCreateClass (event: FormEvent) {
+        event.preventDefault(); // Stops the standard behaviour of a form
+        console.log(
+            {
+                name,
+                avatar,
+                whatsapp,
+                bio,
+                subject,
+                cost
+            }
+        )
     }
 
     return (
