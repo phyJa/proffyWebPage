@@ -55,6 +55,12 @@ export default function TeacherForm() {
                     <Input name="cost" label="Cost per hour"/>
                 </fieldset>
 
+                <fieldset>
+                    <legend>
+                        Available schedule
+                    </legend>
+                </fieldset>
+
                 <footer>
                     <p>
                         <img src={warningIcon} alt="Important warning"/>
