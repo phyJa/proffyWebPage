@@ -73,6 +73,24 @@ export default function TeacherForm() {
         )
     }
 
+    // Take for example: setScheduleItemValue(0, 'week_day', 2 )
+    function setScheduleItemValue(position: number, fieldName: string, value: string ) {
+        const updatedScheduleItems = scheduleItems.map(
+            (scheduleItem, index) => {
+                if(index === position) {
+                    // [variable]: value. Without using this, we would obtain a new property
+                    // called "fieldName". This will continue to keep the name of the parameter passed,
+                    // but will change its value to "value", since it cannot exist two properties with
+                    // the same name in an object.
+                    return {...scheduleItem, [fieldName]: value}; 
+                } else {
+                    return scheduleItem;
+                }
+            }
+        )
+        setScheduleItems(updatedScheduleItems);
+    }
+
     return (
         <div id="page-teacher-form" className="container">
             <PageHeader 
@@ -153,12 +171,13 @@ export default function TeacherForm() {
                         
                         {
                             scheduleItems.map(
-                                (scheduleItem) => {
+                                (scheduleItem, index) => {
                                     return(
                                         <div className="schedule-item" key={scheduleItem.week_day}>
                                             <Select 
                                                 name="week_day" 
                                                 label="Week Day"
+                                                onChange={(event) => { setScheduleItemValue(index, 'week_day', event.target.value) } }
                                                 options={
                                                     [
                                                         {value: '0', label: 'Sunday'},
