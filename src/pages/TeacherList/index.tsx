@@ -3,18 +3,32 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+import api from '../../services/api';
 
 // CSS
 import './styles.css';  
+
 
 export default function TeacherList () {
     const [subject, setSubject] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time, setTime] = useState('');
 
-    function searchTeachers(event: FormEvent) {
+    async function searchTeachers(event: FormEvent) {
         event.preventDefault();
+        
+        //To use queries, use it inside a params object
+        const response = await api.get('/classes',
+            {
+                params: {
+                    subject,
+                    week_day,
+                    time
+                }
+            }
+        )
 
+        console.log(response.data);
     }
 
     return (
