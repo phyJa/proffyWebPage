@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react'
+import { useHistory } from 'react-router-dom'; // This is for redirect the user
 
 // Components
 import PageHeader from '../../components/PageHeader'
@@ -14,6 +15,9 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 import './styles.css';
 
 export default function TeacherForm() {
+    //Variable to history
+    const history = useHistory();
+    
     // Using states again
     // Teacher information
     const [name, setName] = useState('');
@@ -76,6 +80,9 @@ export default function TeacherForm() {
         ).then(
             () => {
                 alert("Successful submission!");
+
+                //Redirect the user to the landing page
+                history.push('/');
             }
         ).catch(
             () => {
