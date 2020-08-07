@@ -140,7 +140,7 @@ export default function TeacherForm() {
                             name="cost" 
                             label="Cost per hour"
                             value={cost}
-                            onChange={ (event) => {setCost(event.target.name)} }    
+                            onChange={(event) => { setCost(event.target.value) }}
                         />
                     </fieldset>
     
