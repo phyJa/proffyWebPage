@@ -5,13 +5,13 @@ import PageHeader from '../../components/PageHeader'
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
+import api from '../../services/api';
 
 // Icons
 import warningIcon from '../../assets/images/icons/warning.svg'
 
 //CSS
 import './styles.css';
-
 
 export default function TeacherForm() {
     // Using states again
@@ -61,6 +61,28 @@ export default function TeacherForm() {
     // Let's use Form Event to start preventing the page to reload
     function handleCreateClass (event: FormEvent) {
         event.preventDefault(); // Stops the standard behaviour of a form
+        
+        api.post(
+            '/classes', /* or 'classes' */
+            {
+                name, // name: name
+                avatar,
+                whatsapp,
+                bio,
+                subject,
+                cost: Number(cost),
+                schedule: scheduleItems //Because the back-end will receive "scheduleItems" as "schedule"
+            }
+        ).then(
+            () => {
+                alert("Successful submission!");
+            }
+        ).catch(
+            () => {
+                alert("Submission error...");
+            }
+        );
+        
         console.log(
             {
                 name,
@@ -68,7 +90,8 @@ export default function TeacherForm() {
                 whatsapp,
                 bio,
                 subject,
-                cost
+                cost,
+                scheduleItems
             }
         )
     }
