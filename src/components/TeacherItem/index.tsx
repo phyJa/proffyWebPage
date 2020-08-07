@@ -1,23 +1,25 @@
 import React from 'react';
 
-// Interface
-interface TeacherItemProps {
-    teacher: {
-        avatar: string,
-        bio: string,
-        cost: number,
-        id: number,
-        name: string,
-        subject: string,
-        whatsapp: string
-    };
-}
-
 // Images
 import whatsAppIcon from '../../assets/images/icons/whatsapp.svg';
 
 // CSS
 import './styles.css';
+
+// Interfaces
+export interface Teacher {
+    avatar: string,
+    bio: string,
+    cost: number,
+    id: number,
+    name: string,
+    subject: string,
+    whatsapp: string
+}
+
+interface TeacherItemProps {
+    teacher: Teacher;
+}
 
 const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
     return (
