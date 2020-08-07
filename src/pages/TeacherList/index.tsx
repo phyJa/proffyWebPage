@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 import Input from '../../components/Input';
@@ -8,13 +8,24 @@ import Select from '../../components/Select';
 import './styles.css';  
 
 export default function TeacherList () {
+    const [subject, setSubject] = useState('');
+    const [week_day, setWeek_day] = useState('');
+    const [time, setTime] = useState('');
+
+    function searchTeachers(event: FormEvent) {
+        event.preventDefault();
+
+    }
+
     return (
         <div id="page-teacher-list" className="container">
             <PageHeader title="These are the available Proffys">
-                <form id="search-teachers">
+                <form id="search-teachers" onSubmit={searchTeachers}>
                     <Select 
                             name="subject" 
                             label="Subject"
+                            value={subject}
+                            onChange={(event) => {setSubject(event.target.value)}}
                             options={
                                 [
                                     {value: 'Art', label: 'Art'},
@@ -33,6 +44,8 @@ export default function TeacherList () {
                     <Select 
                         name="week_day" 
                         label="Week Day"
+                        value={week_day}
+                        onChange={(event) => {setWeek_day(event.target.value)}}
                         options={
                             [
                                 {value: '0', label: 'Sunday'},
@@ -46,7 +59,17 @@ export default function TeacherList () {
                         }
                     />
                     
-                    <Input name="time" label="Time" type="time"/>
+                    <Input 
+                        name="time" 
+                        label="Time" 
+                        type="time"
+                        value={time}
+                        onChange={(event) => {setTime(event.target.value)}}
+                    />
+
+                    <button type="submit">
+                        Search
+                    </button>
                 </form>
             </PageHeader>
 
