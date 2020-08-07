@@ -177,6 +177,7 @@ export default function TeacherForm() {
                                             <Select 
                                                 name="week_day" 
                                                 label="Week Day"
+                                                value={scheduleItem.week_day}
                                                 onChange={(event) => { setScheduleItemValue(index, 'week_day', event.target.value) } }
                                                 options={
                                                     [
@@ -191,9 +192,21 @@ export default function TeacherForm() {
                                                 }
                                             />
     
-                                            <Input name="from" label="From" type="time" />
+                                            <Input 
+                                                name="from" 
+                                                label="From" 
+                                                type="time"
+                                                value={scheduleItem.from}
+                                                onChange={(event) => { setScheduleItemValue(index, 'from', event.target.value) } } 
+                                            />
     
-                                            <Input name="to" label="To" type="time" />
+                                            <Input 
+                                                name="to" 
+                                                label="To" 
+                                                type="time"
+                                                value={scheduleItem.to}
+                                                onChange={(event) => { setScheduleItemValue(index, 'to', event.target.value) } } 
+                                            />
                                         </div>
                                     );
                                 }
