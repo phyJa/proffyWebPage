@@ -7,12 +7,15 @@ import api from '../../services/api';
 
 // CSS
 import './styles.css';  
+import TeacherForm from '../TeacherForm';
 
 
 export default function TeacherList () {
     const [subject, setSubject] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time, setTime] = useState('');
+
+    const[teachers, setTeachers] = useState([]);
 
     async function searchTeachers(event: FormEvent) {
         event.preventDefault();
@@ -28,7 +31,7 @@ export default function TeacherList () {
             }
         )
 
-        console.log(response.data);
+        setTeachers(response.data);
     }
 
     return (
@@ -88,11 +91,13 @@ export default function TeacherList () {
             </PageHeader>
 
             <main>
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
+                {
+                    teachers.map(
+                        (teacher) => {
+                            return <TeacherItem teacher={teacher} />
+                        }
+                    )
+                }
             </main>
         </div>
     )
